@@ -26,7 +26,7 @@ def create_user(full_name: str, username: str, password_hash: str):
         )
         return cursor.fetchone()  # (id, username, password_hash)
 
-
+# функция для получения пользователя из БД по username
 def get_user_by_username(username: str):
     with conn.cursor() as cursor:
         cursor.execute(

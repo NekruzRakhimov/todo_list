@@ -80,7 +80,7 @@ def create_task(
     db.create_task(task)
     return models.CommonResponse(message="Task created successfully")
 
-
+# получение списка всех задач пользователя
 @app.get("/tasks")
 def get_all_tasks(
         status_filter: str | None = Query(default=None),
