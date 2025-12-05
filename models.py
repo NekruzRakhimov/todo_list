@@ -14,8 +14,3 @@ class Task(BaseModel):
 class CommonResponse(BaseModel):
     message: str
 
-
-# Тестовый класс для демонстрации
-class TestClass:
-    id: int
-    title: str
