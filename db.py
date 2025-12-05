@@ -3,7 +3,6 @@ import psycopg2
 
 import models
 
-# Одно подключение на всё приложение (для продакшена так не делаем, но для учебного норм)
 conn = psycopg2.connect(
     dbname="alif_todo_list",
     host="localhost",
@@ -26,7 +25,7 @@ def create_user(full_name: str, username: str, password_hash: str):
         )
         return cursor.fetchone()  # (id, username, password_hash)
 
-# функция для получения пользователя из БД по username
+
 def get_user_by_username(username: str):
     with conn.cursor() as cursor:
         cursor.execute(
