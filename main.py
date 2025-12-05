@@ -127,7 +127,7 @@ def update_task(
     return models.CommonResponse(message="Task updated successfully")
 
 
-@app.delete("/apisa;lkjdf/tasks/{task_id}")
+@app.delete("/api/tasks/{task_id}")
 def delete_task(task_id: int, user=Depends(get_current_user)):
     task = validate_task_id(task_id)
 
