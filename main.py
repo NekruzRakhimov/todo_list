@@ -63,7 +63,7 @@ def login(body: LoginRequest):
 
 # ---------- Tasks ----------
 
-@app.post("/tasks", status_code=status.HTTP_201_CREATED)
+@app.post("/api/tasks", status_code=status.HTTP_201_CREATED)
 def create_task(
         task: models.Task,
         user=Depends(get_current_user),
@@ -81,7 +81,7 @@ def create_task(
     return models.CommonResponse(message="Task created successfully")
 
 # получение списка всех задач пользователя
-@app.get("/tasks")
+@app.get("/api/tasks")
 def get_all_tasks(
         status_filter: str | None = Query(default=None),
         sort_column: str | None = Query(default=None),
@@ -93,7 +93,7 @@ def get_all_tasks(
     }
 
 
-@app.get("/tasks/{task_id}/details")
+@app.get("/api/tasks/{task_id}/details")
 def get_task_by_id(task_id: int, user=Depends(get_current_user), ):
     task = validate_task_id(task_id)
 
@@ -106,7 +106,7 @@ def get_task_by_id(task_id: int, user=Depends(get_current_user), ):
     return {"task": task}
 
 
-@app.put("/tasks/{task_id}")
+@app.put("/api/tasks/{task_id}")
 def update_task(
         task_id: int,
         task: models.Task,
@@ -127,7 +127,7 @@ def update_task(
     return models.CommonResponse(message="Task updated successfully")
 
 
-@app.delete("/tasks/{task_id}")
+@app.delete("/apisa;lkjdf/tasks/{task_id}")
 def delete_task(task_id: int, user=Depends(get_current_user)):
     task = validate_task_id(task_id)
 
