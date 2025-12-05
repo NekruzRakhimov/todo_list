@@ -10,7 +10,7 @@ from fastapi.security import OAuth2PasswordBearer
 import config
 from db import get_user_by_username
 
-# Очень секретная строка
+
 pwd_context = CryptContext(
     schemes=["pbkdf2_sha256"],
     deprecated="auto",
